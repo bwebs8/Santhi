@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santhi Dental Clinic | Punnayarkulam</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root { scroll-padding-top: 6rem; }
+        body { font-family: 'Outfit', sans-serif; overflow-x: hidden; background-color: #f8fafc; }
+        
+        .glass { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px); }
+        .gradient-text { background: linear-gradient(90deg, #1e40af, #10b981); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .btn-gradient { background: linear-gradient(90deg, #1e40af, #2563eb); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        
+        /* 1-Second Loading Animation */
+        #loader-wrapper {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: #ffffff; z-index: 9999; display: flex;
+            flex-direction: column; justify-content: center; align-items: center;
+        }
+        .loader-logo { font-size: 3.5rem; color: #1e40af; animation: toothFloat 1s ease-in-out infinite; }
+        .loader-bar { width: 180px; height: 5px; background: #f1f5f9; border-radius: 10px; margin-top: 20px; overflow: hidden; position: relative; }
+        .loader-progress { position: absolute; width: 0%; height: 100%; background: linear-gradient(90deg, #1e40af, #10b981); animation: progressFill 1s forwards ease-in-out; }
+        
+        @keyframes toothFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+        @keyframes progressFill { 0% { width: 0%; } 100% { width: 100%; } }
+
+        .service-card { transition: all 0.3s ease; border: 1px solid #e2e8f0; }
+        .service-card:hover { transform: translateY(-5px); border-color: #3b82f6; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05); background: white; }
+        
+        .doctor-card { transition: 0.4s ease; }
+        .doctor-card:hover { transform: translateY(-10px); }
+
+        .star-rating { color: #fbbf24 !important; display: flex; gap: 3px; }
+        .hours-row { transition: 0.3s; padding: 10px; border-radius: 12px; }
+        .hours-row:hover { background: rgba(255,255,255,0.05); }
+    </style>
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div id="loader-wrapper">
+        <div class="loader-logo"><i class="fa-solid fa-tooth"></i></div>
+        <div class="loader-bar"><div class="loader-progress"></div></div>
+    </div>
+
+    <!-- Nav -->
+    <nav class="fixed w-full z-50 glass border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center text-white shadow-lg"><i class="fa-solid fa-tooth text-xl"></i></div>
+                <span class="text-2xl font-bold text-blue-900">Santhi<span class="text-green-500">Dental</span></span>
+            </div>
+            <div class="hidden md:flex gap-8 font-medium text-slate-600">
+                <a href="#home" class="nav-link hover:text-blue-700 transition">Home</a>
+                <a href="#services" class="nav-link hover:text-blue-700 transition">Services</a>
+                <a href="#doctors" class="nav-link hover:text-blue-700 transition">Doctors</a>
+                <a href="#reviews" class="nav-link hover:text-blue-700 transition">Reviews</a>
+                <a href="#contact" class="nav-link hover:text-blue-700 transition">Contact</a>
+            </div>
+            <a href="#contact" class="nav-link hidden md:block btn-gradient text-white px-7 py-2.5 rounded-full font-semibold">Book Appointment</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="home" class="min-h-screen flex items-center pt-20 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6 text-slate-900">Your Smile, <br><span class="gradient-text">Our Priority.</span></h1>
+                <p class="text-lg text-slate-600 mb-8 max-w-lg">Providing world-class dentistry in Punnayarkulam. Your oral health is in safe hands with our specialist board.</p>
+                <a href="#services" class="nav-link btn-gradient text-white px-8 py-4 rounded-2xl font-bold inline-block">View Services</a>
+            </div>
+            <div data-aos="zoom-in">
+                <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80" class="rounded-[3rem] shadow-2xl border-8 border-white" alt="Clinic">
+            </div>
+        </div>
+    </section>
+
+     <!-- Services Section -->
+    <section id="services" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-blue-900 mb-4">Our Services</h2>
+                <div class="w-24 h-1 bg-green-500 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Services Cards -->
+                <div class="service-card p-8 rounded-[2rem] bg-white" data-aos="fade-up"><i class="fa-solid fa-tooth text-3xl text-blue-600 mb-5"></i><h3 class="text-xl font-bold mb-3">Root Canal Treatment</h3><p class="text-slate-600 text-sm leading-relaxed">Treatment for infection of the pulp when decay reaches the third layer of the tooth.</p></div>
+                <div class="service-card p-8 rounded-[2rem] bg-white" data-aos="fade-up"><i class="fa-solid fa-teeth text-3xl text-green-600 mb-5"></i><h3 class="text-xl font-bold mb-3">Crown and Bridges</h3><p class="text-slate-600 text-sm leading-relaxed">Dental caps and replacement teeth designed to match your natural smile strength.</p></div>
+                <div class="service-card p-8 rounded-[2rem] bg-white" data-aos="fade-up"><i class="fa-solid fa-screwdriver text-3xl text-purple-600 mb-5"></i><h3 class="text-xl font-bold mb-3">Post and Core</h3><p class="text-slate-600 text-sm leading-relaxed">Restoration for teeth with inadequate tissue to retain a conventional crown.</p></div>
+                <div class="service-card p-8 rounded-[2rem] bg-white" data-aos="fade-up"><i class="fa-solid fa-grip-lines-vertical text-3xl text-orange-600 mb-5"></i><h3 class="text-xl font-bold mb-3">Orthodontics (Braces)</h3><p class="text-slate-600 text-sm leading-relaxed">Straightening and aligning irregular teeth for better chewing and aesthetics.</p></div>
+                <div class="service-card p-8 rounded-[2rem] bg-white" data-aos="fade-up"><i class="fa-solid fa-anchor text-3xl text-blue-500 mb-5"></i><h3 class="text-xl font-bold mb-3">Dental Implants</h3><p class="text-slate-600 text-sm leading-relaxed">The ideal solution for replacing missing teeth with natural-looking results.</p></div>
+                <div class="service-card p-8 rounded-[2rem] bg-white" data-aos="fade-up"><i class="fa-solid fa-scalpel-path text-3xl text-red-500 mb-5"></i><h3 class="text-xl font-bold mb-3">Oral Surgery</h3><p class="text-slate-600 text-sm leading-relaxed">Surgical procedures for tooth removal, jaw repositioning, or tumor removal.</p></div>
+                <div class="service-card p-8 rounded-[2rem] bg-white" data-aos="fade-up"><i class="fa-solid fa-sparkles text-3xl text-cyan-500 mb-5"></i><h3 class="text-xl font-bold mb-3">Scaling & Gum Treatment</h3><p class="text-slate-600 text-sm leading-relaxed">Removing plaque and tartar to control the severity of gum diseases.</p></div>
+                <div class="service-card p-8 rounded-[2rem] bg-white" data-aos="fade-up"><i class="fa-solid fa-kit-medical text-3xl text-indigo-500 mb-5"></i><h3 class="text-xl font-bold mb-3">Dental Restoration</h3><p class="text-slate-600 text-sm leading-relaxed">Repairing missing or decayed teeth using fillings, crowns, or dentures.</p></div>
+                <div class="service-card p-8 rounded-[2rem] bg-white" data-aos="fade-up"><i class="fa-solid fa-truck-medical text-3xl text-red-600 mb-5"></i><h3 class="text-xl font-bold mb-3">Emergency Dentistry</h3><p class="text-slate-600 text-sm leading-relaxed">Professional treatment for urgent issues involving pain or tissue damage.</p></div>
+                <div class="service-card p-8 rounded-[2rem] bg-white" data-aos="fade-up"><i class="fa-solid fa-wand-magic-sparkles text-3xl text-yellow-500 mb-5"></i><h3 class="text-xl font-bold mb-3">Bleaching</h3><p class="text-slate-600 text-sm leading-relaxed">Removing stains and restoring natural tooth color through whitening.</p></div>
+                <div class="service-card p-8 rounded-[2rem] bg-white" data-aos="fade-up"><i class="fa-solid fa-face-smile text-3xl text-pink-500 mb-5"></i><h3 class="text-xl font-bold mb-3">Smile Designing</h3><p class="text-slate-600 text-sm leading-relaxed">Cosmetic procedures considering size, color, and shape for a perfect smile.</p></div>
+                <div class="service-card p-8 rounded-[2rem] bg-white" data-aos="fade-up"><i class="fa-solid fa-arrows-to-circle text-3xl text-slate-700 mb-5"></i><h3 class="text-xl font-bold mb-3">Full Mouth Rehab</h3><p class="text-slate-600 text-sm leading-relaxed">Combining restorative treatments to rebuild and fortify your smile.</p></div>
+                <div class="service-card p-8 rounded-[2rem] bg-white" data-aos="fade-up"><i class="fa-solid fa-child-reaching text-3xl text-emerald-500 mb-5"></i><h3 class="text-xl font-bold mb-3">Pediatric Dentistry</h3><p class="text-slate-600 text-sm leading-relaxed">Early-stage dental care and hygiene routines for your baby’s teeth.</p></div>
+                <div class="service-card p-8 rounded-[2rem] bg-white" data-aos="fade-up"><i class="fa-solid fa-teeth-open text-3xl text-blue-800 mb-5"></i><h3 class="text-xl font-bold mb-3">Complete & Partial Dentures</h3><p class="text-slate-600 text-sm leading-relaxed">Removable artificial teeth for normal functioning and profile enhancement.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctors -->
+    <section id="doctors" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16" data-aos="fade-up">Our Specialist Board</h2>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+                <!-- Dr 1 -->
+                <div class="doctor-card bg-slate-50 p-5 rounded-[2.5rem] text-center shadow-sm" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="h-48 bg-slate-200 rounded-3xl mb-4 overflow-hidden shadow-inner">
+                        <img src="https://images.pexels.com/photos/3279197/pexels-photo-3279197.jpeg?auto=compress&w=300" class="w-full h-full object-cover">
+                    </div>
+                    <p class="font-bold text-slate-900">Dr. M.A. Vinod</p>
+                    <p class="text-[10px] text-blue-600 font-bold uppercase tracking-widest mt-1">Endodontist (MDS)</p>
+                </div>
+                <!-- Dr 2 -->
+                <div class="doctor-card bg-slate-50 p-5 rounded-[2.5rem] text-center shadow-sm" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="h-48 bg-slate-200 rounded-3xl mb-4 overflow-hidden shadow-inner">
+                        <img src="https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg?auto=compress&w=300" class="w-full h-full object-cover">
+                    </div>
+                    <p class="font-bold text-slate-900">Dr. Dhanya Vinod</p>
+                    <p class="text-[10px] text-blue-600 font-bold uppercase tracking-widest mt-1">Dental Surgeon</p>
+                </div>
+                <!-- Dr 3 -->
+                <div class="doctor-card bg-slate-50 p-5 rounded-[2.5rem] text-center shadow-sm" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="h-48 bg-slate-200 rounded-3xl mb-4 overflow-hidden shadow-inner">
+                        <img src="https://images.pexels.com/photos/3779770/pexels-photo-3779770.jpeg?auto=compress&w=300" class="w-full h-full object-cover">
+                    </div>
+                    <p class="font-bold text-slate-900">Dr. Justin Mathew</p>
+                    <p class="text-[10px] text-blue-600 font-bold uppercase tracking-widest mt-1">Maxillofacial (MDS)</p>
+                </div>
+                <!-- Dr 4 -->
+                <div class="doctor-card bg-slate-50 p-5 rounded-[2.5rem] text-center shadow-sm" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="h-48 bg-slate-200 rounded-3xl mb-4 overflow-hidden shadow-inner">
+                        <img src="https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?auto=compress&w=300" class="w-full h-full object-cover">
+                    </div>
+                    <p class="font-bold text-slate-900">Dr. Joju Varghese</p>
+                    <p class="text-[10px] text-blue-600 font-bold uppercase tracking-widest mt-1">Orthodontist (MDS)</p>
+                </div>
+                <!-- Dr 5 -->
+                <div class="doctor-card bg-slate-50 p-5 rounded-[2.5rem] text-center shadow-sm" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="h-48 bg-slate-200 rounded-3xl mb-4 overflow-hidden shadow-inner">
+                        <img src="https://images.pexels.com/photos/3786215/pexels-photo-3786215.jpeg?auto=compress&w=300" class="w-full h-full object-cover">
+                    </div>
+                    <p class="font-bold text-slate-900">Dr. Krishna Kumar R</p>
+                    <p class="text-[10px] text-blue-600 font-bold uppercase tracking-widest mt-1">Pedodontist (MDS)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section id="reviews" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16" data-aos="fade-up">Patient Testimonials</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Mariya Thomas -->
+                <div class="bg-white p-8 rounded-[2rem] border border-slate-100 flex flex-col justify-between" data-aos="fade-up">
+                    <div>
+                        <div class="star-rating mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <p class="text-slate-600 italic text-sm mb-6">"Excellent services provided! I got done my root canal treatment went very well. I am very satisfied with Dr M.A Vinod's treatment."</p>
+                    </div>
+                    <p class="font-bold text-sm">Mariya Thomas</p>
+                </div>
+                <!-- SAK -->
+                <div class="bg-white p-8 rounded-[2rem] border border-slate-100 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+                    <div>
+                        <div class="star-rating mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <p class="text-slate-600 italic text-sm mb-6">"Dental Clinic Inside Santhi Hospital.. Very easy to access and very professional."</p>
+                    </div>
+                    <p class="font-bold text-sm">SAK (Local Guide)</p>
+                </div>
+                <!-- Farzana Saad -->
+                <div class="bg-white p-8 rounded-[2rem] border border-slate-100 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
+                    <div>
+                        <div class="star-rating mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <p class="text-slate-600 italic text-sm mb-6">"High-quality dental care with skilled specialists. Highly recommended."</p>
+                    </div>
+                    <p class="font-bold text-sm">Farzana Saad</p>
+                </div>
+                <!-- sobha gireesan -->
+                <div class="bg-white p-8 rounded-[2rem] border border-slate-100 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="300">
+                    <div>
+                        <div class="star-rating mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <p class="text-slate-600 italic text-sm mb-6">"Very satisfied with the service and the clean environment."</p>
+                    </div>
+                    <p class="font-bold text-sm">sobha gireesan</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Opening Hours -->
+    <section id="contact" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12">
+            <div data-aos="fade-right">
+                <h2 class="text-4xl font-bold mb-8 text-blue-900">Contact Us</h2>
+                <div class="bg-slate-50 p-8 rounded-[2.5rem] mb-8">
+                    <div class="space-y-6">
+                        <div class="flex gap-4"><i class="fa-solid fa-map-marker-alt text-blue-600 text-xl"></i>
+                            <p class="text-slate-600"><strong>Santhi Dental Clinic</strong><br>Santhi Nursing Home, Punnayarkulam,<br>Thrissur Kerala 679561</p>
+                        </div>
+                        <div class="flex gap-4"><i class="fa-solid fa-phone-alt text-blue-600 text-xl"></i>
+                            <p class="text-slate-600">+91 9388787100</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-64 rounded-[2.5rem] overflow-hidden shadow-lg grayscale hover:grayscale-0 transition duration-500 border-4 border-white">
+                    <iframe class="w-full h-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3921.21!2d75.92!3d10.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDQyJzAwLjAiTiA3NfKwNTUnMDAuMCJF!5e0!3m2!1sen!2sin!4v1620000000000"></iframe>
+                </div>
+            </div>
+
+            <div class="bg-slate-900 text-white p-10 md:p-12 rounded-[3rem] shadow-2xl h-fit self-center" data-aos="fade-left">
+                <h3 class="text-2xl font-bold mb-8 flex items-center gap-3"><i class="fa-regular fa-clock text-green-400"></i> Opening Hours</h3>
+                <div class="space-y-2">
+                    <div class="flex justify-between border-b border-white/10 hours-row italic"><span>Monday</span><span class="font-bold">09:00 AM - 05:00 PM</span></div>
+                    <div class="flex justify-between border-b border-white/10 hours-row italic"><span>Tuesday</span><span class="font-bold">09:00 AM - 05:00 PM</span></div>
+                    <div class="flex justify-between border-b border-white/10 hours-row italic"><span>Wednesday</span><span class="font-bold">09:00 AM - 05:00 PM</span></div>
+                    <div class="flex justify-between border-b border-white/10 hours-row italic"><span>Thursday</span><span class="font-bold">09:00 AM - 05:00 PM</span></div>
+                    <div class="flex justify-between border-b border-white/10 hours-row italic"><span>Friday</span><span class="font-bold">09:00 AM - 05:00 PM</span></div>
+                    <div class="flex justify-between border-b border-white/10 hours-row italic"><span>Saturday</span><span class="font-bold">09:00 AM - 05:00 PM</span></div>
+                    <div class="flex justify-between hours-row pt-2 text-red-400 font-bold uppercase tracking-widest"><span>Sunday</span><span>Closed</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 text-center text-slate-400 text-xs bg-slate-50 border-t border-slate-100">
+        <p>© 2024 Santhi Dental Clinic. All Rights Reserved.</p>
+    </footer>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/919447000000" target="_blank" class="fixed bottom-8 right-8 w-16 h-16 bg-green-500 rounded-full flex items-center justify-center text-white text-3xl shadow-2xl hover:scale-110 transition z-50">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Preloader Logic (1s exactly)
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                const loader = document.getElementById('loader-wrapper');
+                loader.style.opacity = '0';
+                loader.style.transition = 'opacity 0.5s ease';
+                setTimeout(() => { 
+                    loader.style.display = 'none'; 
+                    AOS.init({ duration: 800, once: true, offset: 50 });
+                }, 500);
+            }, 1000);
+        });
+
+        // Smooth Scroll for Nav
+        document.querySelectorAll('.nav-link').forEach(button => {
+            button.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId.startsWith('#')) {
+                    e.preventDefault();
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const offsetPosition = targetElement.offsetTop - 80;
+                        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
